@@ -6,4 +6,6 @@ import com.mollytea.mollyteawebapp.entity.OrderItem;
 
 public interface OrderItemRepository extends JpaRepository<OrderItem, Long> {
     List<OrderItem> findByOrderId(Long orderId);
+    //find a list of orders
+    List<OrderItem> findByOrderIdIn(List<Long> orderIds);
 }
