@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login – MOLLY TEA</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Include Header -->
+  <div id="header-placeholder"></div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 mt-4 mb-4">
+        <h1>Login</h1>
+        <form method="post">
+          <div class="form-group">
+            <label for="username">Phone</label>
+            <input required type="phone" class="form-control" name="username" id="username" placeholder="Phone">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input required type="password" class="form-control" name="password" id="password" placeholder="Password">
+          </div>
+          <a type="button" class="btn float-right" href="/oauth2/authorization/google">Login with Google</a>
+          <button type="submit" class="btn btn-primary float-right" id="login">Login</button>
+        </form>
+        <p>Don't have an account? <a href="/signup">Signup now!</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Include Footer -->
+  <div id="footer-placeholder"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script>
+    fetch('header.html').then(r => r.text()).then(html => document.getElementById('header-placeholder').innerHTML = html);
+    fetch('footer.html').then(r => r.text()).then(html => document.getElementById('footer-placeholder').innerHTML = html);
+  </script>
+</body>
+</html>
