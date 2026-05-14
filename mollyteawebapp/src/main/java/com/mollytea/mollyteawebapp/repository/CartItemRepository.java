@@ -5,5 +5,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.mollytea.mollyteawebapp.entity.CartItem;
 
 public interface CartItemRepository extends JpaRepository<CartItem, Long> {
-    List<CartItem> findByCartId(Long cartId);
+
+    // use userId check cart
+    List<CartItem> findByUserId(Long userId);
+
+    // use userId and productId to check
+    List<CartItem> findByUserIdAndProductId(Long userId, Long productId);
 }
