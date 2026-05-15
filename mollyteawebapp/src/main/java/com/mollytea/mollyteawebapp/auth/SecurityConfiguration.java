@@ -35,7 +35,8 @@ public class SecurityConfiguration {
      //   http.oauth2Login((oauth2Login) -> oauth2Login
      //           .loginPage("/login"))
                 http.formLogin((formLogin) -> formLogin
-                        .loginPage("/login"))
+                        .loginPage("/login")
+                        .defaultSuccessUrl("/menu", true))
                 .authorizeHttpRequests((authz) -> authz
                         .requestMatchers("/account/**").authenticated()
                         .anyRequest().permitAll())
